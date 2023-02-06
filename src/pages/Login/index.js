@@ -62,7 +62,7 @@ export default function Login() {
                     </div>
                     <div className="text-center">
                         <span className="txt1">Não possui conta? </span>
-                        <a className="txt2" >Criar conta</a>
+                        <span className="txt2" >Criar conta</span>
                     </div>
                 </form>
             </div>

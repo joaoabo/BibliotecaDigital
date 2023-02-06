@@ -7,29 +7,32 @@ import "./styles.css";
 
 export default function Livros() {
     const [livros, setLivros] = useState([]);
+    const [page, setPage] = useState(0);
     // const userName = localStorage.getItem('userName');
     const accessToken = localStorage.getItem('accessToken');
+
+    const authorization = {
+      headers: {
+          Authorization: `Bearer ${accessToken}`,
+      }
+  }
 
     const navigate = useNavigate();
 
     useEffect(() => {
-      api.get('api/Book/v1/desc/4/1', {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        }
-      }).then(response => {
-          setLivros(response.data.list)
-      })
+      trazLivros();
     }, [accessToken]);
+
+    async function trazLivros() {
+      const response = await api.get(`api/Book/v1/desc/4/${page}`, authorization)
+        setLivros([ ...livros, ...response.data.list]);
+        setPage(page + 1);
+    }
+
 // delete 
     async function deleteLivros(id){
       try {
-          await api.delete(`api/Book/v1/${id}`, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`
-            }
-          })
-
+          await api.delete(`api/Book/v1/${id}`, authorization)
           setLivros(livros.filter(livros => livros.id !== id))
       } catch (error) {
           alert(`Falha ao deletar o livro ${livros.title}`)
@@ -46,11 +49,7 @@ export default function Livros() {
     // logout
     async function logout(){
       try {
-          await api.get('api/auth/v1/revoke', {
-            headers: {
-              Authorization: `Bearer ${accessToken}`
-            }
-          })
+          await api.get('api/auth/v1/revoke', authorization)
           localStorage.clear();
           navigate('/');
       } catch (error) {
@@ -99,6 +98,7 @@ export default function Livros() {
               </li>
               ))}
           </ul>
+          <button className="button" onClick={trazLivros} type="button">Proximo</button>
         </div>
       </div>
     </div>
