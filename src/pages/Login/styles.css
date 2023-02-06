@@ -1,0 +1,206 @@
+
+.loginBody {
+    width: 100%;
+    margin: 0 auto;
+    background-image: linear-gradient(#85658599, #251b25), url(../../assets/book-digital.jpg);
+    background-position: top;
+    border: 1px solid  #cf0ecf;
+    background-size: cover;
+  }
+  .container-login {
+    width: 100%;
+    min-height: 99.8vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+  }
+  
+  .loginBody :not(.container) {
+    opacity: 1;
+  }
+  .wrap-login {
+    width: 410px;
+    background-color: rgba(68, 28, 83, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 77px 32px 56px 32px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logoBi {
+    background-image: url(../../assets/web-developer.png);
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .login-form {
+    width: 100%;
+  }
+  
+  .login-form-title {
+    font-family: Nunito, sans-serif;
+    display: block;
+    font-size: 30px;
+    color: #c2b2c4;
+    line-height: 2.2;
+    text-align: center;
+  }
+  
+  .login-form-title img {
+    width: 90px;
+  }
+  
+  .wrap-input {
+    width: 100%;
+    position: relative;
+    margin-bottom: 37px;
+  }
+  
+  .input {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.2;
+    border: none;
+    display: block;
+    width: 100%;
+    height: 45px;
+    background-color: transparent;
+    padding: 0 5px;
+    font-family: Nunito, sans-serif;
+  }
+  
+  .focus-input {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    color: #adadad;
+    font-family: Nunito, sans-serif;
+  }
+  
+  .focus-input::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    background: #e70992;
+    background: -webkit-linear-gradient(to left, #cf0ecf, #55e905);
+    background: -o-linear-gradient(to left, #cf0ecf, #55e905);
+    background: -moz-linear-gradient(to left, #cf0ecf, #55e905);
+    background: linear-gradient(to left, #cf0ecf, #55e905);
+  }
+  
+  .focus-input::after {
+    font-family: Nunito, sans-serif;
+    font-size: 15px;
+    color: #999999;
+    line-height: 1.2;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 16px;
+    left: 0px;
+    padding-left: 5px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  
+  .input:focus {
+    outline: 0;
+  }
+  
+  .input:focus+.focus-input::after {
+    top: -15px;
+  }
+  
+  .input:focus+.focus-input::before {
+    width: 100%;
+  }
+  
+  .has-val+.focus-input::after {
+    top: -15px;
+  }
+  
+  .has-val+.focus-input::before {
+    width: 100%;
+  }
+  
+  .container-login-form-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 13px;
+  }
+  
+  .login-form-btn {
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: #da439b;
+    background: -webkit-linear-gradient(to left, #cf0ecf, #c5064f);
+    background: -o-linear-gradient(to left, #cf0ecf, #c5064f);
+    background: -moz-linear-gradient(to left, #cf0ecf, #c5064f);
+    background: linear-gradient(to left, #cf0ecf, #c5064f);
+    transition: 1s;
+  }
+  
+  .login-form-btn:hover {
+    transform: scale(1.075);
+    cursor: pointer;
+    background: #da439b;
+    background: -webkit-linear-gradient(to left, #c5064f, #cf0ecf);
+    background: -o-linear-gradient(to left, #c5064f, #cf0ecf);
+    background: -moz-linear-gradient(to left, #c5064f, #cf0ecf);
+    background: linear-gradient(to left, #c5064f, #cf0ecf);
+  }
+  
+  .text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .txt1 {
+    font-size: 14px;
+    color: #c2b2c4;
+    line-height: 1.5;
+    padding-right: 5px;
+  }
+  
+  .txt2 {
+    font-size: 14px;
+    color: #cf0ecf;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: 1s;
+  }
+  
+  .txt2:hover {
+    color: #b6a82c
+  }

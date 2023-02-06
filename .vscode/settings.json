@@ -1,0 +1,8 @@
+{
+    "git.ignoreLimitWarning": true,
+    "powermode.presets": "flames",
+    "powermode.combo.counterEnabled": "default",
+    "powermode.explosions.backgroundMode": "image",
+    "powermode.shake.enabled": false,
+    "powermode.shake.intensity": 0
+}
